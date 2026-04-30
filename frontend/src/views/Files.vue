@@ -18,6 +18,13 @@ import { resourcesApi, shareApi, mediaApi } from "@/api";
 import Errors from "@/views/Errors.vue";
 import Preview from "@/views/files/Preview.vue";
 import ListingView from "@/views/files/ListingView.vue";
+//import Editor from "@/views/files/Editor.vue";
+//import OnlyOfficeEditor from "./files/OnlyOfficeEditor.vue";
+//import EpubViewer from "./files/EpubViewer.vue";
+//import DjvuViewer from "./files/DjvuViewer.vue";
+//import DocViewer from "./files/DocViewer.vue";
+//import MarkdownViewer from "./files/MarkdownViewer.vue";
+//import ThreeJsViewer from "./files/ThreeJs.vue";
 import { state, mutations, getters } from "@/store";
 import router from "@/router";
 import { extractSourceFromPath, removeLastDir, base64Encode, removeTrailingSlash } from "@/utils/url.js";
@@ -117,6 +124,7 @@ export default {
     Errors,
     Preview,
     ListingView,
+    DjvuViewer,
     LoadingSpinner,
     Editor: createAsyncComponent(() => import('@/views/files/Editor.vue')),
     OnlyOfficeEditor: createAsyncComponent(() => import('@/views/files/OnlyOfficeEditor.vue')),
