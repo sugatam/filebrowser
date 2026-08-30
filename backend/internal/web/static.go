@@ -62,7 +62,7 @@ func (t *TemplateRenderer) Render(w http.ResponseWriter, name string, data inter
 // this header, blocking inline scripts without limiting frames, images, or API calls.
 func spaContentSecurityPolicy(nonce string) string {
 	return fmt.Sprintf(
-		"script-src 'self' 'nonce-%s' https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com",
+		"script-src 'self' blob: 'nonce-%s' https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com",
 		nonce,
 	)
 }
