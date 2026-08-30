@@ -75,7 +75,7 @@ func recaptchaSettings(pwd settings.PasswordAuthConfig) (enabled bool, host, key
 // worker-src blob: is required for Ace editor web workers (analytics/config preview).
 func spaContentSecurityPolicy(nonce string) string {
 	policy := fmt.Sprintf(
-		"script-src 'self' 'nonce-%s' https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com",
+		"script-src 'self' blob: 'nonce-%s' https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com",
 		nonce,
 	)
 	for _, origin := range onlyOfficeScriptSrcOrigins() {
